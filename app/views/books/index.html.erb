@@ -1,2 +1,16 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<%= form_with url: books_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Book"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<ul>
+  <% @books.each do |book| %>
+    <li><%= book.name %>
+   <%= book.author %>
+    <%= book.storage_place %></li>
+  <% end %>
+</ul>

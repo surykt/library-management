@@ -11,6 +11,8 @@
   <% @books.each do |book| %>
     <li><%= book.name %>
    <%= book.author %>
-    <%= book.storage_place %></li>
+    <%= book.storage_place %>
+    <%= link_to "Lend", new_book_lend_path(book), class: "btn btn-primary" %>
+    </li>
   <% end %>
 </ul>

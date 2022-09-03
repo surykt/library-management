@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  has_many :lends
+  
   validates :name, presence: true
   validates :author, presence: true
   validates :storage_place, presence: true
